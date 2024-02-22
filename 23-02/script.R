@@ -44,4 +44,23 @@ ub <- waking_minutes * blink_rate_ub
 
 # TODO: Would like a way to turn quantiles into distributions... contact Tom about this? Or look for package
 
-eu_land_pct <- 0.03
+eu_land_pct_lb <- 0.02
+eu_land_pct_ub <- 0.06
+
+# EU is more built up than other parts of the world, so less forested
+# But would have been more propensity for forest area before being built up
+
+forest_propensity <- 2^rnorm(1000, mean = -0.5, sd = 0.5)
+forest_propensity_lb <- quantile(forest_propensity, 0.1)
+forest_propensity_ub <-quantile(forest_propensity, 0.9)
+
+# Just going to do the lb x lb method for now, sorry!
+100 * eu_land_pct_lb * forest_propensity_lb
+100 * eu_land_pct_ub * forest_propensity_ub
+
+# Answer: 5%
+# You earned 5.68 points!
+
+# How many eggs did the Titanic carry?
+
+# I presume this means initially when it set sail
