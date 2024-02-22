@@ -64,3 +64,57 @@ forest_propensity_ub <-quantile(forest_propensity, 0.9)
 # How many eggs did the Titanic carry?
 
 # I presume this means initially when it set sail
+# I think there were 100s of people on the titanic, 100 - 1000 (some were babies though)
+# Based on Kaggle question pretty sure is as 100s
+# The voyage was for I believe a number of weeks (how long do eggs last?)
+# Each person would on average eat around an egg or so per day (lots of variance)
+# It's possible for some reason they took no eggs
+
+people <- rlnorm(1000, meanlog = log(400), sdlog = 1)
+days <- rnorm(1000, mean = 14, sd = 4)
+eggs_per_person_per_day <- 1 # Maybe high if anything?
+
+total_eggs <- people * days * eggs_per_person_per_day
+
+quantile(total_eggs, 0.1)
+quantile(total_eggs, 0.9)
+
+# Answer: 40,000
+# You lost 0.67 points!
+
+# I was wrong about the number of people on the titanic, it was 1000s
+
+# How many novels were translated from English to German in 1796?
+# I put below 100 with 75%
+
+# How much does the Eiffel tower weigh in metric tonnes?
+# I put above 7000 with 55% (I don't know how much things weigh: TODO look into this)
+
+# How many zipcodes in California are prime numbers?
+
+# What proportion of numbers are prime?
+is_prime <- function(n) n == 2L || all(n %% 2L:ceiling(sqrt(n)) != 0)
+max <- 99999
+num <- sapply(1:99999, is_prime) |> sum()
+num / max
+
+# So around 10% of zip codes are prime
+
+# Does Califorina have above 5000 or below 5000 zip codes? Again hard to say
+# I said below with 65%
+
+# What percentage of the biomass of all living humans is the biomass of all living ants?
+# I'm pretty sure this is >10% just based on knowing the fact
+
+# How many cats were kept as pets worldwide in 2018?
+
+people_worldwide <- 8 * 10^9
+(500 * 10^6) / people_worldwide # 1 cat per 16 people
+
+# I said above 500 million with 75%
+
+# What is the area of Madagascar in square kilometres?
+
+sqrt(700000)
+
+# So a square which is 850km
