@@ -100,7 +100,7 @@ num / max
 
 # So around 10% of zip codes are prime
 
-# Does Califorina have above 5000 or below 5000 zip codes? Again hard to say
+# Does California have above 5000 or below 5000 zip codes? Again hard to say
 # I said below with 65%
 
 # What percentage of the biomass of all living humans is the biomass of all living ants?
